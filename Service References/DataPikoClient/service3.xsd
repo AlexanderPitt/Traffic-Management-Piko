@@ -1,0 +1,369 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://developer.piko.com/PikoDataServices/" elementFormDefault="qualified" targetNamespace="http://developer.piko.com/PikoDataServices/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://developer.piko.com/PikoDataService/Data/" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/PikoDataService.DB" />
+  <xs:element name="GetVideoInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdVideo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVideoInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://developer.piko.com/PikoDataService/Data/" minOccurs="0" name="GetVideoInfoResult" nillable="true" type="q1:SupportData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVideoSegmentInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdVideo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SegmentId" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVideoSegmentInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PikoDataService.DB" minOccurs="0" name="GetVideoSegmentInfoResult" nillable="true" type="q2:Segment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVideoSegmentList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdVideo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVideoSegmentListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/PikoDataService.DB" minOccurs="0" name="GetVideoSegmentListResult" nillable="true" type="q3:ArrayOfSegment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChannels">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChannelsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/PikoDataService.DB" minOccurs="0" name="GetChannelsResult" nillable="true" type="q4:ArrayOfChannel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeviceList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeviceListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/PikoDataService.DB" minOccurs="0" name="GetDeviceListResult" nillable="true" type="q5:ArrayOfDevices" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteVideo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdVideo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Volume" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteVideoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteVideoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveVideo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdVideo" nillable="true" type="xs:string" />
+        <xs:element xmlns:q6="http://developer.piko.com/PikoDataService/Data/" minOccurs="0" name="Data" nillable="true" type="q6:SupportData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveVideoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveVideoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateVideo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://developer.piko.com/PikoDataService/Data/" minOccurs="0" name="Data" nillable="true" type="q7:SupportData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateVideoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://developer.piko.com/PikoDataService/Data/" minOccurs="0" name="CreateVideoResult" nillable="true" type="q8:SupportData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBlocks">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBlocksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://developer.piko.com/PikoDataService/Data/" minOccurs="0" name="GetBlocksResult" nillable="true" type="q9:ArrayOfPlaylistData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveBlock">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://developer.piko.com/PikoDataService/Data/" minOccurs="0" name="Data" nillable="true" type="q10:PlaylistData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveBlockResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveBlockResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExportBlock">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://developer.piko.com/PikoDataService/Data/" minOccurs="0" name="Data" nillable="true" type="q11:PlaylistData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExportBlockResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExportBlockResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadBlock">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="blockId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadBlockResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://developer.piko.com/PikoDataService/Data/" minOccurs="0" name="LoadBlockResult" nillable="true" type="q12:PlaylistData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBlock">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="blockId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBlockResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteBlockResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlaylists">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlaylistsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://developer.piko.com/PikoDataService/Data/" minOccurs="0" name="GetPlaylistsResult" nillable="true" type="q13:ArrayOfPlaylistData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePlaylist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://developer.piko.com/PikoDataService/Data/" minOccurs="0" name="Data" nillable="true" type="q14:PlaylistData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePlaylistResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SavePlaylistResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExportPlaylist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://developer.piko.com/PikoDataService/Data/" minOccurs="0" name="Data" nillable="true" type="q15:PlaylistData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExportPlaylistResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExportPlaylistResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadPlaylist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="playlistId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadPlaylistResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://developer.piko.com/PikoDataService/Data/" minOccurs="0" name="LoadPlaylistResult" nillable="true" type="q16:PlaylistData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePlaylist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="playlistId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePlaylistResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeletePlaylistResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConfigResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/PikoDataService.DB" minOccurs="0" name="GetConfigResult" nillable="true" type="q17:Config" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRemoteConfig">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRemoteConfigResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetRemoteConfigResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSystem">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSystemResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVolumeData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VolumePath" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVolumeDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://developer.piko.com/PikoDataService/Data/" minOccurs="0" name="GetVolumeDataResult" nillable="true" type="q18:VolumeData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCategories">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCategoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://developer.piko.com/PikoDataService/Data/" minOccurs="0" name="GetCategoriesResult" nillable="true" type="q19:ArrayOfCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://developer.piko.com/PikoDataService/Data/" minOccurs="0" name="categoryToCreate" nillable="true" type="q20:Category" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateCategoryResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CategoryId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCategoryResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddTemplateField">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://developer.piko.com/PikoDataService/Data/" minOccurs="0" name="FieldDefinition" nillable="true" type="q21:TemplateFieldData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddTemplateFieldResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddTemplateFieldResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddTemplateFieldToCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdCategory" type="xs:int" />
+        <xs:element minOccurs="0" name="IdTemplateField" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddTemplateFieldToCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddTemplateFieldToCategoryResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://developer.piko.com/PikoDataServices/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_ServiceDataPiko_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://developer.piko.com/PikoDataServices/" location="" />
+  <wsdl:types />
+  <wsdl:binding name="NetTcpBinding_ServiceDataPiko" type="i0:ServiceDataPiko">
+    <wsp:PolicyReference URI="#NetTcpBinding_ServiceDataPiko_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetVideoInfo">
+      <soap12:operation soapAction="http://developer.piko.com/PikoDataServices/ServiceDataPiko/GetVideoInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVideoSegmentInfo">
+      <soap12:operation soapAction="http://developer.piko.com/PikoDataServices/ServiceDataPiko/GetVideoSegmentInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVideoSegmentList">
+      <soap12:operation soapAction="http://developer.piko.com/PikoDataServices/ServiceDataPiko/GetVideoSegmentList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChannels">
+      <soap12:operation soapAction="http://developer.piko.com/PikoDataServices/ServiceDataPiko/GetChannels" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeviceList">
+      <soap12:operation soapAction="http://developer.piko.com/PikoDataServices/ServiceDataPiko/GetDeviceList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVideo">
+      <soap12:operation soapAction="http://developer.piko.com/PikoDataServices/ServiceDataPiko/DeleteVideo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVideo">
+      <soap12:operation soapAction="http://developer.piko.com/PikoDataServices/ServiceDataPiko/SaveVideo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateVideo">
+      <soap12:operation soapAction="http://developer.piko.com/PikoDataServices/ServiceDataPiko/CreateVideo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlocks">
+      <soap12:operation soapAction="http://developer.piko.com/PikoDataServices/ServiceDataPiko/GetBlocks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveBlock">
+      <soap12:operation soapAction="http://developer.piko.com/PikoDataServices/ServiceDataPiko/SaveBlock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportBlock">
+      <soap12:operation soapAction="http://developer.piko.com/PikoDataServices/ServiceDataPiko/ExportBlock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadBlock">
+      <soap12:operation soapAction="http://developer.piko.com/PikoDataServices/ServiceDataPiko/LoadBlock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBlock">
+      <soap12:operation soapAction="http://developer.piko.com/PikoDataServices/ServiceDataPiko/DeleteBlock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlaylists">
+      <soap12:operation soapAction="http://developer.piko.com/PikoDataServices/ServiceDataPiko/GetPlaylists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePlaylist">
+      <soap12:operation soapAction="http://developer.piko.com/PikoDataServices/ServiceDataPiko/SavePlaylist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportPlaylist">
+      <soap12:operation soapAction="http://developer.piko.com/PikoDataServices/ServiceDataPiko/ExportPlaylist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadPlaylist">
+      <soap12:operation soapAction="http://developer.piko.com/PikoDataServices/ServiceDataPiko/LoadPlaylist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePlaylist">
+      <soap12:operation soapAction="http://developer.piko.com/PikoDataServices/ServiceDataPiko/DeletePlaylist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConfig">
+      <soap12:operation soapAction="http://developer.piko.com/PikoDataServices/ServiceDataPiko/GetConfig" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRemoteConfig">
+      <soap12:operation soapAction="http://developer.piko.com/PikoDataServices/ServiceDataPiko/GetRemoteConfig" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSystem">
+      <soap12:operation soapAction="http://developer.piko.com/PikoDataServices/ServiceDataPiko/CheckSystem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVolumeData">
+      <soap12:operation soapAction="http://developer.piko.com/PikoDataServices/ServiceDataPiko/GetVolumeData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategories">
+      <soap12:operation soapAction="http://developer.piko.com/PikoDataServices/ServiceDataPiko/GetCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCategory">
+      <soap12:operation soapAction="http://developer.piko.com/PikoDataServices/ServiceDataPiko/CreateCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCategory">
+      <soap12:operation soapAction="http://developer.piko.com/PikoDataServices/ServiceDataPiko/DeleteCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTemplateField">
+      <soap12:operation soapAction="http://developer.piko.com/PikoDataServices/ServiceDataPiko/AddTemplateField" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTemplateFieldToCategory">
+      <soap12:operation soapAction="http://developer.piko.com/PikoDataServices/ServiceDataPiko/AddTemplateFieldToCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>
