@@ -1,0 +1,134 @@
+﻿<Window x:Class="PikoTrafficManager.Params"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PikoTrafficManager"
+        mc:Ignorable="d"
+        Title="Params" Height="640" Width="1200" Background="#FF282828" Foreground="White">
+    <Grid x:Name="configLayout">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="64" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Row="1" x:Name="btSaveParams" Content="Save" Width="48" Height="48" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,8,112,8" Opacity="1" Click="btSaveParams_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source=".\image\BT_save.png"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Grid.Row="1" x:Name="btCancel" Content="Cancel" Width="48" Height="48" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,64,0" Click="btCancel_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source=".\image\BlackCross.png"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <TabControl Background="#FF282828" x:Name="tbParams" >
+            <TabItem x:Name="tabItemGlobalParams" Header="Global Parameters">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="143.303"/>
+                        <ColumnDefinition Width="48.697"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Content="Connectivity : " VerticalAlignment="Center" Foreground="White" Margin="4,38,0,1" Grid.ColumnSpan="2"></Label>
+                    <RadioButton Grid.Row="0" Grid.Column="2" Content="Local" x:Name="rbConnectivityLocal"  GroupName="Connectivity" IsChecked="True" Foreground="White" Margin="20,24,0,0"/>
+                    <TextBox Grid.Row="0" Grid.Column="2" Text="" x:Name="tbLocalURL"  Width="420" Height="32px" Margin="287,16,287,17"/>
+                    <RadioButton Grid.Row="1" Grid.Column="2" Content="Remote" Width="64px" x:Name="rbConnectivityRemote" GroupName="Connectivity" IsChecked="False" Foreground="White" Margin="20,28,0,0" HorizontalAlignment="Left"/>
+                    <TextBox Grid.Row="1" Grid.Column="2" Text="" x:Name="tbRemoteURL" Width="420" Height="32px" Margin="287,17,287,16"/>
+                    <Label Grid.Row="2" Grid.Column="0" Content="Enable Preview (Local Only) : " VerticalAlignment="Center" Foreground="White" Grid.ColumnSpan="2" Margin="0,19"></Label>
+                    <CheckBox Grid.Row="2" Grid.Column="2" x:Name="cbEnablePreview" IsChecked="True" VerticalAlignment="Center" Margin="24,24,0,24"/>
+                    <Label Grid.Row="3" Grid.Column="0" Content="Auto Play Media (Local Only) : " VerticalAlignment="Center" Foreground="White" Grid.ColumnSpan="2" Margin="0,19"></Label>
+                    <CheckBox Grid.Row="3" Grid.Column="2" x:Name="cbAutoPlayMedia" IsChecked="True" VerticalAlignment="Center" Margin="24,24,0,24"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tabItemCategories" Header="Categories">
+                <Grid x:Name="CategoriesLayout" Margin="0,0,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="256px"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="32px"/>
+                        <RowDefinition Height="32px"/>
+                        <RowDefinition Height="64px"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="1" Content="Categories" Foreground="White"/>
+
+                    <Button x:Name="btAddCategory" Grid.Row="1" Height="32px" Content="+" Width="32px"  HorizontalAlignment="Right"  Margin="0,0,12,0" Click="btAddCategory_Click" >
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source=".\image\Add.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="btDeleteCategory" Grid.Row="1" Height="32px" Content="-" Width="32px"  HorizontalAlignment="Right"  Margin="0,0,48,0 " Click="btDeleteCategory_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source=".\image\BinWhite.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Label Grid.Row="1" Content="Title :" Grid.Column="1" Margin="30,0,0,0" Foreground="White" />
+                    <TextBox Grid.Row="1" Grid.Column="1" x:Name="tbCategoryTitle" Width="256px" Height="24px" HorizontalAlignment="Left" Margin="160,0,0,0"  />
+
+                    <DataGrid HorizontalContentAlignment="Stretch" IsReadOnly="True"  x:Name="lbCategories" AutoGenerateColumns="False" Foreground="Black" Height="auto" Grid.Row="2" Grid.RowSpan="2" Grid.Column="0" ItemsSource="{Binding Categories}" Background="#FF454548" SelectionChanged="lbCategories_SelectionChanged">
+                        <DataGrid.Resources>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="Background" Value="#FF282828" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Style>
+                        </DataGrid.Resources>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="200" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Label Grid.Row="2" Grid.Column="1" Content="Field Name : " Width="128px" Height="24px" HorizontalAlignment="Left" Margin="30,0,0,0" Foreground="White" />
+                    <TextBox Grid.Row="2" Grid.Column="1" x:Name="tbNewCustomFieldName" Width="256px" Height="24px" HorizontalAlignment="Left" Margin="160,0,0,0"  />
+                    <Label Grid.Row="2" Grid.Column="1" Content="Field Type : " Width="128px" Height="24px" HorizontalAlignment="Left" Margin="440,0,0,0" Foreground="White" />
+                    <ComboBox Grid.Row="2" Grid.Column="1" x:Name="cbFieldType" Width="256px" Height="24px" HorizontalAlignment="Left" Margin="560,0,0,0">
+                        <ComboBoxItem Name="cbItemString">Text</ComboBoxItem>
+                        <ComboBoxItem Name="cbItemPicture">Picture</ComboBoxItem>
+                        <ComboBoxItem Name="cbItemVideo">Video</ComboBoxItem>
+                    </ComboBox>
+                    <Button Grid.Row="2" Grid.Column="1" Content="+" x:Name="btAddFieldName" Width="32px" Height="32px" HorizontalAlignment="Right" Margin="0,0,64,0" VerticalAlignment="Center" Click="btAddFieldName_Click" >
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source=".\image\Add.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+
+                    <Label Grid.Row="2" Grid.Column="1" Content=" Category Additional Template fields" Foreground="White" Height="24" VerticalAlignment="Top"/>
+
+                    <ScrollViewer Grid.Row="3" Grid.Column="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                        <StackPanel x:Name="spAdditionalCategoryField">
+
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

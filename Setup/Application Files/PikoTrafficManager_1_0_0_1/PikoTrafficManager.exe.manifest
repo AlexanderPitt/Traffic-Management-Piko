@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="PikoTrafficManager.exe" version="1.0.0.1" publicKeyToken="c2dddd357afc0b8c" language="neutral" processorArchitecture="x86" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="PikoTrafficManager" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+    <commandLine file="PikoTrafficManager.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Dragon.IO.Files.dll" size="9216">
+      <assemblyIdentity name="Dragon.IO.Files" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>D22cQ7zJriCVhz6AfuJBpzY2Y5ZDm491vPz1UIiFhZY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PikoTrafficManager.exe" size="133096">
+      <assemblyIdentity name="PikoTrafficManager" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>IhwqbakBvgVJfRnpU2BDK0U9zBFFmy/G8fc04IuS5eg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Vlc.DotNet.Core.dll" size="54272">
+      <assemblyIdentity name="Vlc.DotNet.Core" version="2.1.134.0" publicKeyToken="84529DA31F4EB963" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>x+bpft7vCebxx2hPkxThQLDJ3ossHxAYnqvqvqfzGOs=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Vlc.DotNet.Core.Interops.dll" size="55808">
+      <assemblyIdentity name="Vlc.DotNet.Core.Interops" version="2.1.134.0" publicKeyToken="84529DA31F4EB963" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>UcvNltZlJzgNH9/Su68QDxpflRGDXMVS8/rjc6cwegI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Vlc.DotNet.Forms.dll" size="22528">
+      <assemblyIdentity name="Vlc.DotNet.Forms" version="2.1.134.0" publicKeyToken="84529DA31F4EB963" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>fpj+1jMfS/R06GJhABIxOEW49APvdztcBRxj/chP0hc=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Vlc.DotNet.Wpf.dll" size="5120">
+      <assemblyIdentity name="Vlc.DotNet.Wpf" version="2.1.134.0" publicKeyToken="84529DA31F4EB963" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>MPUWt3lHHjSF/X6gGbIs5ZXunDVLohgUf5f1uayKuNY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="PikoTrafficManager.exe.config" size="1020">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>MXADzJpkkPCYhQ1IGrb3pNwESrFqbtfVi3Eab5IXKcI=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=PC-GUILLAUME\Guillaume" issuerKeyHash="ce5e59c0cd4e52fab5098b55b5b1b5d2c7c3cb5f" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>8fwvhRsWWQ9KhaZMqHpmc4m4DaAI/TfYGJrysBQvsk0=</DigestValue></Reference></SignedInfo><SignatureValue>P51CHyK+vYK8AlNX4xySHafC4GC4okx4w3mLbVdEIGahKbCtOTgEKrUP3PkE2Fmf43hLMqgwlS/N2ku0IIudGKW+rnPC8TfQgbtgUdeDH+186DqT/bZF92PnDfQu3uOLx83w64sWdXpJTjrnzv7Jq/S5eha2f7VAmo9dJmgRT9I=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>sA3y8rELlsUh2HI1CmiOW8/YfYxMkEFgeWpec37ni6F5thXtth6FRgTcC5FyZH7nWIqE1VIF5p5X9ofTr+FXGnHVByzJP4fd7JRcCkcTqInacHWbOg26GNHUUQNZc+s9KTmDMzLf9Fo2Hro3fw1/dbPfHBThdCz3unvwK5v0mRk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="4db22f14b0f29a18d837fd08a00db88973667aa84ca6854a0f59161b852ffcf1" Description="" Url=""><as:assemblyIdentity name="PikoTrafficManager.exe" version="1.0.0.1" publicKeyToken="c2dddd357afc0b8c" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=PC-GUILLAUME\Guillaume</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>LpgtYy3ngT3vqi7g+mVzxHckcFX6z+cplp8EIYfXsr8=</DigestValue></Reference></SignedInfo><SignatureValue>UVN23j3soqEFmucKtKB0ZhfmmdAfn3uU+q3+gNk5bYDwc/b74ZRQLLT5FPyqUkTSrDDgEiAoei8zBWjKPIjqPDdaMjn3BS07YKew+IMvs1deQOOlppMbPz1Ydh56d9phOKQdYCE79NXz/me4mv4SPJdzoYvG0QiIHuXlFyWpi7k=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>sA3y8rELlsUh2HI1CmiOW8/YfYxMkEFgeWpec37ni6F5thXtth6FRgTcC5FyZH7nWIqE1VIF5p5X9ofTr+FXGnHVByzJP4fd7JRcCkcTqInacHWbOg26GNHUUQNZc+s9KTmDMzLf9Fo2Hro3fw1/dbPfHBThdCz3unvwK5v0mRk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB8TCCAVqgAwIBAgIQeGQyKNT5VqZPRgfWX9z+KTANBgkqhkiG9w0BAQsFADA3MTUwMwYDVQQDHiwAUABDAC0ARwBVAEkATABMAEEAVQBNAEUAXABHAHUAaQBsAGwAYQB1AG0AZTAeFw0xNzEyMjgwOTE4MzFaFw0xODEyMjgxNTE4MzFaMDcxNTAzBgNVBAMeLABQAEMALQBHAFUASQBMAEwAQQBVAE0ARQBcAEcAdQBpAGwAbABhAHUAbQBlMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCwDfLysQuWxSHYcjUKaI5bz9h9jEyQQWB5al5zfueLoXm2Fe22HoVGBNwLkXJkfudYioTVUgXmnlf2h9Ov4VcacdUHLMk/h93slFwKRxOoidpwdZs6DboY0dRRA1lz6z0pOYMzMt/0WjYeujd/DX91s98cFOF0LPe6e/Arm/SZGQIDAQABMA0GCSqGSIb3DQEBCwUAA4GBAJuhrR0/hPoTatAp1K+FUonZLGEkA61hgwOos2FNg+EWeymVKJigeVQ3CqMm3/bxcMZodZYdN3XCxWtotJjvn+CJw7pPzlQCgzHOaXXchX64tyW1I1A39ek7k9Y06KoL9+YroNxMM8knhmO6Quu89nCm+08DGUotPtFvb92fS1ep</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

@@ -1,0 +1,52 @@
+G:\Piko\PikoTrafficManager\PikoDataService\obj\Debug\PikoDataService.csprojResolveAssemblyReference.cache
+G:\Piko\PikoTrafficManager\PikoDataService\bin\Debug\PikoDataService.exe.config
+G:\Piko\PikoTrafficManager\PikoDataService\bin\Debug\PikoDataService.exe
+G:\Piko\PikoTrafficManager\PikoDataService\bin\Debug\PikoDataService.pdb
+G:\Piko\PikoTrafficManager\PikoDataService\obj\Debug\PikoDataService.exe
+G:\Piko\PikoTrafficManager\PikoDataService\obj\Debug\PikoDataService.pdb
+G:\Piko\PikoTrafficManager\PikoDataService\bin\Debug\DB\PikoServer.mdb
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoDataService\bin\Debug\DB\PikoServer.mdb
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoDataService\bin\Debug\PikoDataService.exe.config
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoDataService\bin\Debug\PikoDataService.exe
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoDataService\bin\Debug\PikoDataService.pdb
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoDataService\obj\Debug\PikoDataService.exe
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoDataService\obj\Debug\PikoDataService.pdb
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoDataService\obj\Debug\PikoDataService.csprojResolveAssemblyReference.cache
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoDataService\bin\Debug\Piko.XML.dll
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoDataService\bin\Debug\Piko.XML.pdb
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoDataService\bin\Debug\DB\PikoServer.mdb
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoDataService\bin\Debug\PikoDataService.exe.config
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoDataService\bin\Debug\PikoDataService.exe
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoDataService\bin\Debug\PikoDataService.pdb
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoDataService\bin\Debug\Piko.XML.dll
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoDataService\bin\Debug\Piko.XML.pdb
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoDataService\obj\Debug\PikoDataService.csprojResolveAssemblyReference.cache
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoDataService\obj\Debug\PikoDataService.exe
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoDataService\obj\Debug\PikoDataService.pdb
+F:\NINSIGHT-SVN\Third Party\Piko\PikoDataService\bin\Debug\DB\PikoServer.mdb
+F:\NINSIGHT-SVN\Third Party\Piko\PikoDataService\bin\Debug\PikoDataService.exe.config
+F:\NINSIGHT-SVN\Third Party\Piko\PikoDataService\bin\Debug\PikoDataService.exe
+F:\NINSIGHT-SVN\Third Party\Piko\PikoDataService\bin\Debug\PikoDataService.pdb
+F:\NINSIGHT-SVN\Third Party\Piko\PikoDataService\bin\Debug\Piko.XML.dll
+F:\NINSIGHT-SVN\Third Party\Piko\PikoDataService\bin\Debug\Piko.XML.pdb
+F:\NINSIGHT-SVN\Third Party\Piko\PikoDataService\obj\Debug\PikoDataService.csprojResolveAssemblyReference.cache
+F:\NINSIGHT-SVN\Third Party\Piko\PikoDataService\obj\Debug\PikoDataService.exe
+F:\NINSIGHT-SVN\Third Party\Piko\PikoDataService\obj\Debug\PikoDataService.pdb
+F:\NINSIGHT-SVN\Third Party\Piko\PikoDataService\bin\Debug\System.ServiceModel.dll
+F:\NINSIGHT-SVN\Third Party\Piko\PikoDataService\bin\Debug\System.ServiceModel.xml
+F:\NINSIGHT-SVN\Third Party\Piko\PikoDataService\obj\Debug\PikoDataService.csproj.CoreCompileInputs.cache
+F:\NINSIGHT-SVN\Third Party\Piko\PikoDataService\bin\Debug\x86\libcrypto-1_1.dll
+F:\NINSIGHT-SVN\Third Party\Piko\PikoDataService\bin\Debug\x86\libcurl.dll
+F:\NINSIGHT-SVN\Third Party\Piko\PikoDataService\bin\Debug\x86\libssh2.dll
+F:\NINSIGHT-SVN\Third Party\Piko\PikoDataService\bin\Debug\x86\libssl-1_1.dll
+F:\NINSIGHT-SVN\Third Party\Piko\PikoDataService\bin\Debug\x86\MediaInfo.dll
+F:\NINSIGHT-SVN\Third Party\Piko\PikoDataService\bin\Debug\x64\libcrypto-1_1-x64.dll
+F:\NINSIGHT-SVN\Third Party\Piko\PikoDataService\bin\Debug\x64\libcurl.dll
+F:\NINSIGHT-SVN\Third Party\Piko\PikoDataService\bin\Debug\x64\libssh2.dll
+F:\NINSIGHT-SVN\Third Party\Piko\PikoDataService\bin\Debug\x64\libssl-1_1-x64.dll
+F:\NINSIGHT-SVN\Third Party\Piko\PikoDataService\bin\Debug\x64\MediaInfo.dll
+F:\NINSIGHT-SVN\Third Party\Piko\PikoDataService\bin\Debug\Piko.MediaInfo.dll
+F:\NINSIGHT-SVN\Third Party\Piko\PikoDataService\bin\Debug\Piko.MediaInfo.pdb
+F:\NINSIGHT-SVN\Third Party\Piko\PikoDataService\bin\Debug\MediaInfo.Wrapper.dll
+F:\NINSIGHT-SVN\Third Party\Piko\PikoDataService\bin\Debug\MediaInfo.Wrapper.pdb
+F:\NINSIGHT-SVN\Third Party\Piko\PikoDataService\bin\Debug\MediaInfo.Wrapper.xml

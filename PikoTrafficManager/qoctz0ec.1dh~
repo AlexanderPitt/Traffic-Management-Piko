@@ -1,0 +1,384 @@
+﻿using Dragon.IO.Files.INI;
+using Piko.XML;
+using PikoTrafficManager.Data;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Configuration;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using Vlc.DotNet.Wpf;
+
+namespace PikoTrafficManager
+{
+    /// <summary>
+    /// Logique d'interaction pour MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        public List<VolumeData> PikoVolumes = new List<VolumeData>();
+        public DataObject DragAndDropFileToBlockOrPlaylist = null;
+        public DataObject DragAndDropBlockToPlaylist = null;
+        public VolumeData currentVolume = null;
+        public SupportData currentSupport = null;
+        public BlockData currentBlock = null;
+        public PlaylistData currentPlayList = null;
+        public ObservableCollection<SupportData> SupportsData { get; set; } 
+        public ObservableCollection<BlockData> BlocksData { get; set; }
+        public ObservableCollection<PlaylistData> PlaylistsData { get; set; }
+        public ObservableCollection<PlaylistDataElement> BlocksElements { get; set; }
+        public ObservableCollection<PlaylistDataElement> PlaylistElements { get; set; }
+        public MainWindow()
+        {            
+            InitializeComponent();
+            this.DataContext = this;
+            this.BlocksData = new ObservableCollection<BlockData>();
+            this.PlaylistsData = new ObservableCollection<PlaylistData>();
+            this.SupportsData = new ObservableCollection<SupportData>();
+            this.BlocksElements = new ObservableCollection<PlaylistDataElement>();
+            this.PlaylistElements = new ObservableCollection<PlaylistDataElement>();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            //Include LOCAL/REMOTE
+            INIFile pikoVideoServer = null;
+            using (DataPikoClient.ServiceDataPikoClient sdpc = new DataPikoClient.ServiceDataPikoClient(ConfigurationManager.AppSettings["LocalDataHost"]))
+            {
+                pikoVideoServer = INIFile.ParseINIString(sdpc.GetRemoteConfig());
+                 //new INIFile(@"C:\ProgramData\Piko Software\Video Server\VidServ.ini");
+            }
+                    
+                    INISection storageList = pikoVideoServer.Sections.Where(s=>s.Name.ToLower() ==  "storages").FirstOrDefault();
+            foreach(INISectionElement storageElement in storageList.Items)
+            {
+               string storagePath = storageElement.AsString();
+               VolumeData volumeData = VolumeManager.LoadVolume(storagePath);
+               if (volumeData != null)
+               {
+                   PikoVolumes.Add(volumeData);
+                   cbVolumes.Items.Add(volumeData.Path);
+               }
+            }
+            if(cbVolumes.Items.Count > 0)
+                cbVolumes.SelectedIndex = 0;
+
+            //this.vlcPreviewPlayer.MediaPlayer.VlcLibDirectoryNeeded += OnVlcControlNeedsLibDirectory;
+            this.vlcPreviewPlayer.MediaPlayer.VlcLibDirectory = new DirectoryInfo(@"C:\Program Files (x86)\VideoLAN\VLC\");
+            this.vlcPreviewPlayer.MediaPlayer.EndInit();
+        }
+
+        private void OnVlcControlNeedsLibDirectory(object sender, Vlc.DotNet.Forms.VlcLibDirectoryNeededEventArgs e)
+        {
+            var currentAssembly = Assembly.GetEntryAssembly();
+            var currentDirectory = new FileInfo(currentAssembly.Location).DirectoryName;
+            if (currentDirectory == null)
+                return;
+            if (AssemblyName.GetAssemblyName(currentAssembly.Location).ProcessorArchitecture == ProcessorArchitecture.X86)
+            {
+                e.VlcLibDirectory = new DirectoryInfo(System.IO.Path.Combine(currentDirectory, @"vlslib\x86\"));                
+            }
+            else
+            {
+                e.VlcLibDirectory = new DirectoryInfo(System.IO.Path.Combine(currentDirectory, @"vlslib\x64\"));
+            }
+        }
+
+        private void MainPanel_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var tc = sender as TabControl;
+            if (tc != null)
+            {
+                TabItem selectedItem = (TabItem)tc.SelectedItem;
+                lvBlockList.Visibility = System.Windows.Visibility.Hidden;
+                if (selectedItem.TabIndex == 2)
+                    lvBlockList.Visibility = System.Windows.Visibility.Visible;
+
+            }
+        }
+
+        private void cbVolumes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.currentVolume = this.PikoVolumes[this.cbVolumes.SelectedIndex];
+            this.SupportsData.Clear();
+            foreach (SupportData sup in this.currentVolume.Supports)
+                this.SupportsData.Add(sup);
+        }
+
+        private void lvFilesInVolume_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (this.lvFilesInVolume.SelectedIndex == -1)
+                return;
+            this.currentSupport = this.currentVolume.Supports[this.lvFilesInVolume.SelectedIndex];
+
+            //Populate data
+            this.tbSupportFileName.Text = this.currentSupport.FileName;// System.IO.Path.GetFileNameWithoutExtension(this.currentSupport.FileName);
+            this.tbSupportTitle.Text = this.currentSupport.Title;
+            this.tbSupportFullPath.Text = this.currentSupport.FullPath;
+            //Check if Auto Play ...
+            string[] options = new string[0];
+            Uri src = new Uri(this.currentSupport.FullPath);
+            if (this.vlcPreviewPlayer.MediaPlayer.IsPlaying) //Delay to other thread play video ...
+            {
+                this.vlcPreviewPlayer.MediaPlayer.Stop();
+                System.Threading.Thread.Sleep(150);
+            }
+            this.vlcPreviewPlayer.MediaPlayer.Play(src);
+        }
+
+
+        /* VLC CONTROL */
+        #region VLC CONTROL
+        private void btnPlay_Click(object sender, RoutedEventArgs e)
+        {
+            if(!this.vlcPreviewPlayer.MediaPlayer.IsPlaying)
+                this.vlcPreviewPlayer.MediaPlayer.Play();
+        }
+
+        private void btnPause_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.vlcPreviewPlayer.MediaPlayer.IsPlaying)
+                this.vlcPreviewPlayer.MediaPlayer.Pause();
+        }
+
+        private void btnStop_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.vlcPreviewPlayer.MediaPlayer.IsPlaying)
+                this.vlcPreviewPlayer.MediaPlayer.Stop();
+        }
+
+        private void btnFastForward_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.vlcPreviewPlayer.MediaPlayer.IsPlaying)
+                this.vlcPreviewPlayer.MediaPlayer.Rate += 1 ;
+        }
+
+        private void btnSlow_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.vlcPreviewPlayer.MediaPlayer.IsPlaying)
+            {
+                this.vlcPreviewPlayer.MediaPlayer.Rate = 0.20f;
+            }
+        }
+        #endregion
+
+        private void btEdit_Click(object sender, RoutedEventArgs e)
+        {
+            //Set grid to  editable
+            this.dgBlockDetail.IsReadOnly = false;           
+            this.tbCurrentBlockName.IsReadOnly = false;
+            this.btSaveBlock.IsEnabled = true;
+        }
+
+        private void btAddNewBlock_Click(object sender, RoutedEventArgs e)
+        {
+            
+            this.currentBlock = new BlockData();
+            this.currentBlock.Name = "New Block";
+            this.BlocksData.Add(this.currentBlock);            
+            this.tbCurrentBlockName.Text = this.currentBlock.Name;
+            this.btEdit_Click(this.btEdit, new RoutedEventArgs());
+            this.tbCurrentBlockName.Focus();
+            this.lvAvailableBlocks.SelectedIndex = this.lvAvailableBlocks.Items.Count - 1;
+            this.BlocksElements.Clear(); 
+            foreach (PlaylistDataElement elem in this.currentBlock.Elements)
+                this.BlocksElements.Add(elem);
+            //this.dgBlockDetail.ItemsSource = this.currentBlock.Elements;
+            
+        }
+
+        private void lvFilesInVolume_DragEnter(object sender, DragEventArgs e)
+        {
+
+        }
+
+        private void tbCurrentBlockName_LostFocus(object sender, RoutedEventArgs e)
+        {
+            this.BlocksData[this.lvAvailableBlocks.SelectedIndex].Name = this.tbCurrentBlockName.Text;
+        }
+
+        private void btSaveBlock_Click(object sender, RoutedEventArgs e)
+        {
+            //Save this block
+            this.BlocksData[this.lvAvailableBlocks.SelectedIndex].Name = this.tbCurrentBlockName.Text;
+            //this.currentBlock.ClearElement();
+            foreach (PlaylistDataElement elem in this.BlocksElements)
+                this.BlocksData[this.lvAvailableBlocks.SelectedIndex].AddElement(elem);
+            //Save to XML ... Local or Remotely
+
+
+            //LOCAL
+             
+        }
+
+        private void lvFilesInVolume_MouseMove(object sender, MouseEventArgs e)
+        {
+            base.OnMouseMove(e);
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                this.DragAndDropFileToBlockOrPlaylist = new DataObject();
+                this.DragAndDropFileToBlockOrPlaylist.SetData("Source", "File");
+                this.DragAndDropFileToBlockOrPlaylist.SetData("Index", this.lvFilesInVolume.SelectedIndex);
+                DragDrop.DoDragDrop(this.lvFilesInVolume, this.DragAndDropFileToBlockOrPlaylist, DragDropEffects.Copy | DragDropEffects.Move);
+            }
+
+        }
+
+        private void dgBlockDetail_DragEnter(object sender, DragEventArgs e)
+        {
+            base.OnDragEnter(e);
+
+        }
+
+        private void dgBlockDetail_Drop(object sender, DragEventArgs e)
+        {
+            base.OnDrop(e);
+            if (sender is DataGrid && !this.tbCurrentBlockName.IsReadOnly)
+            {
+
+               SupportData data = this.SupportsData[(int)e.Data.GetData("Index")];
+               this.currentBlock.AddElement(data);
+               this.BlocksElements.Add(this.currentBlock.Elements.Last());
+               this.dgBlockDetail.UpdateLayout();
+            }
+            e.Handled = true;
+        }
+
+        private void dgBlockDetail_DragOver(object sender, DragEventArgs e)
+        {
+            base.OnDragOver(e);
+            e.Effects = DragDropEffects.None;
+            if (sender is DataGrid && !this.tbCurrentBlockName.IsReadOnly)
+            {
+                e.Effects = DragDropEffects.Copy | DragDropEffects.Move;
+            }
+        }
+
+        private void dgBlockDetail_GiveFeedback(object sender, GiveFeedbackEventArgs e)
+        {
+            base.OnGiveFeedback(e);
+            if(e.Effects.HasFlag(DragDropEffects.Copy))
+                Mouse.SetCursor(Cursors.Cross);
+            else if(e.Effects.HasFlag(DragDropEffects.Move))
+                Mouse.SetCursor(Cursors.Pen);
+            else
+                Mouse.SetCursor(Cursors.No);
+        }
+
+        private void lvBlockList_MouseMove(object sender, MouseEventArgs e)
+        {
+            base.OnMouseMove(e);
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                this.DragAndDropBlockToPlaylist = new DataObject();
+                this.DragAndDropBlockToPlaylist.SetData("Source", "Block");
+                this.DragAndDropBlockToPlaylist.SetData("Index", this.lvBlockList.SelectedIndex);
+                DragDrop.DoDragDrop(this.lvBlockList, this.DragAndDropBlockToPlaylist, DragDropEffects.Copy | DragDropEffects.Move);
+            }
+        }
+
+        private void dgPlaylistDetail_DragEnter(object sender, DragEventArgs e)
+        {
+            base.OnDragEnter(e);
+        }
+
+        private void dgPlaylistDetail_DragOver(object sender, DragEventArgs e)
+        {
+            base.OnDragOver(e);
+            e.Effects = DragDropEffects.None;
+            if (sender is DataGrid && !this.tbCurrentBlockName.IsReadOnly)
+            {
+                e.Effects = DragDropEffects.Copy | DragDropEffects.Move;
+            }
+        }
+
+        private void dgPlaylistDetail_Drop(object sender, DragEventArgs e)
+        {
+            base.OnDrop(e);
+            if (sender is DataGrid && !this.tbCurrentPlaylistName.IsReadOnly)
+            {
+                string source = (string)e.Data.GetData("Source");
+
+                if (source == "File")
+                {
+                    SupportData data = this.SupportsData[(int)e.Data.GetData("Index")];
+                    this.currentPlayList.AddElement(data);
+                    this.PlaylistElements.Add(this.currentPlayList.Elements.Last());                    
+                }
+                else if (source == "Block")
+                {
+                    BlockData data = this.BlocksData[(int)e.Data.GetData("Index")];
+                    foreach (PlaylistDataElement element in data.Elements)
+                    {
+                        this.currentPlayList.AddElement(data);
+                        this.PlaylistElements.Add(this.currentPlayList.Elements.Last());
+                    }                
+                }
+                this.dgPlaylistDetail.UpdateLayout();
+
+            }
+            e.Handled = true;
+        }
+
+        private void dgPlaylistDetail_GiveFeedback(object sender, GiveFeedbackEventArgs e)
+        {
+            base.OnGiveFeedback(e);
+            if (e.Effects.HasFlag(DragDropEffects.Copy))
+                Mouse.SetCursor(Cursors.Cross);
+            else if (e.Effects.HasFlag(DragDropEffects.Move))
+                Mouse.SetCursor(Cursors.Pen);
+            else
+                Mouse.SetCursor(Cursors.No);
+        }
+
+        private void btSavePlaylist_Click(object sender, RoutedEventArgs e)
+        {
+            
+            //Save this block
+            this.PlaylistsData[this.lvAvailablePlaylists.SelectedIndex].Title = this.tbCurrentPlaylistName.Text;
+            //this.currentBlock.ClearElement();
+            foreach (PlaylistDataElement elem in this.PlaylistElements)
+                this.PlaylistsData[this.lvAvailablePlaylists.SelectedIndex].AddElement(elem);
+            //Save to XML ... Local or Remotely
+
+
+            //LOCAL
+            PikoXML.SaveXML(this.PlaylistsData[this.lvAvailablePlaylists.SelectedIndex],"");
+        }
+
+        private void btAddNewPlaylist_Click(object sender, RoutedEventArgs e)
+        {
+            this.currentPlayList = new PlaylistData("New Playlist");
+            this.currentPlayList.Title = "New Playlist";
+            this.PlaylistsData.Add(this.currentPlayList);
+            this.tbCurrentPlaylistName.Text = this.currentPlayList.Title;
+            this.btEditPlaylist_Click(this.btEditPlaylist, new RoutedEventArgs());
+            this.tbCurrentPlaylistName.Focus();
+            this.lvAvailablePlaylists.SelectedIndex = this.lvAvailablePlaylists.Items.Count - 1;
+            this.PlaylistElements.Clear();
+            foreach (PlaylistDataElement elem in this.currentPlayList.Elements)
+                this.PlaylistElements.Add(elem);
+            //this.dgBlockDetail.ItemsSource = this.currentBlock.Elements;
+        }
+
+        private void btEditPlaylist_Click(object sender, RoutedEventArgs e)
+        {
+            //Set grid to  editable
+            this.dgPlaylistDetail.IsReadOnly = false;
+            this.tbCurrentPlaylistName.IsReadOnly = false;
+            this.btSavePlaylist.IsEnabled = true;
+        }
+    }
+}

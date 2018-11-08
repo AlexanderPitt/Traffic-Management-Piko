@@ -1,0 +1,28 @@
+﻿<Window x:Class="PikoTrafficManager.Control.MediaDetection"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PikoTrafficManager.Control"
+        mc:Ignorable="d"
+        x:Name="MediaDetectionForm"
+        Title="New Media Detected" Height="527" Width="520" Loaded="MediaDetectionForm_Loaded">
+    <Grid x:Name="MediaDetectionLayout" Background="#FF454548">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="48"/>
+        </Grid.RowDefinitions>
+        <ScrollViewer Grid.Row="0" x:Name="svNewFiles" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+            <StackPanel x:Name="spNewFilesInVolumes">
+
+            </StackPanel>
+        </ScrollViewer>
+
+        <Button Grid.Row="1" Content="Add Selected Files" ToolTip="Add Selected Discovered Files to Piko Data Base" x:Name="btAddSelected" Height="48px" Width="128px" HorizontalAlignment="Right" Margin="0,0,48,0" Click="btAddSelected_Click"/>
+        <Button Grid.Row="1" Content="Close" x:Name="btCancel" Height="48px" Width="128px" HorizontalAlignment="Left" Margin="48,0,0,0" Click="btCancel_Click"/>
+        
+    </Grid>
+</Window>

@@ -1,0 +1,15 @@
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\Utils\Dragon.IO.Files\bin\Debug\Dragon.IO.Files.dll
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\Utils\Dragon.IO.Files\bin\Debug\Dragon.IO.Files.pdb
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\Utils\Dragon.IO.Files\obj\Debug\Dragon.IO.Files.dll
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\Utils\Dragon.IO.Files\obj\Debug\Dragon.IO.Files.pdb
+F:\ProjectsV3\IgnitionProject\Others\Piko\Utils\Dragon.IO.Files\bin\Debug\Dragon.IO.Files.dll
+F:\ProjectsV3\IgnitionProject\Others\Piko\Utils\Dragon.IO.Files\bin\Debug\Dragon.IO.Files.pdb
+F:\ProjectsV3\IgnitionProject\Others\Piko\Utils\Dragon.IO.Files\obj\Debug\Dragon.IO.Files.dll
+F:\ProjectsV3\IgnitionProject\Others\Piko\Utils\Dragon.IO.Files\obj\Debug\Dragon.IO.Files.pdb
+F:\ProjectsV3\IgnitionProject\Others\Piko\Utils\Dragon.IO.Files\obj\Debug\Dragon.IO.Files.csprojResolveAssemblyReference.cache
+F:\NINSIGHT-SVN\Third Party\Piko\Utils\Dragon.IO.Files\bin\Debug\Dragon.IO.Files.dll
+F:\NINSIGHT-SVN\Third Party\Piko\Utils\Dragon.IO.Files\bin\Debug\Dragon.IO.Files.pdb
+F:\NINSIGHT-SVN\Third Party\Piko\Utils\Dragon.IO.Files\obj\Debug\Dragon.IO.Files.csprojResolveAssemblyReference.cache
+F:\NINSIGHT-SVN\Third Party\Piko\Utils\Dragon.IO.Files\obj\Debug\Dragon.IO.Files.dll
+F:\NINSIGHT-SVN\Third Party\Piko\Utils\Dragon.IO.Files\obj\Debug\Dragon.IO.Files.pdb
+F:\NINSIGHT-SVN\Third Party\Piko\Utils\Dragon.IO.Files\obj\Debug\Dragon.IO.Files.csproj.CoreCompileInputs.cache

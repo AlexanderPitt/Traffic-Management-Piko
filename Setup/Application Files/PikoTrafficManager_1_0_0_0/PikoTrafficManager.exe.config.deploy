@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.6.1" />
+    </startup>
+  <appSettings>
+     <add key="Connectivity" value="Local" />
+     <add key="LocalDataHost" value="net.tcp://localhost:9010/ServiceDataPiko/" />
+     <add key="RemoteDataHost" value="net.tcp://localhost:9010/ServiceDataPiko/" />
+     <add key="EnablePreview" value="True" />
+  </appSettings>
+  <system.serviceModel>
+    <bindings>
+      <netTcpBinding>
+        <binding name="NetTcpBinding_ServiceDataPiko">
+          <security mode="None" />
+        </binding>
+      </netTcpBinding>
+    </bindings>
+    <client>
+      <endpoint address="net.tcp://localhost:9010/ServiceDataPiko/ServiceDataPiko"
+        binding="netTcpBinding" bindingConfiguration="NetTcpBinding_ServiceDataPiko"
+        contract="DataPikoClient.ServiceDataPiko" name="NetTcpBinding_ServiceDataPiko" />
+    </client>
+  </system.serviceModel>
+</configuration>

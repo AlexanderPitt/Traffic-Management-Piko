@@ -1,0 +1,114 @@
+G:\Piko\PikoTrafficManager\PikoTrafficManager\bin\Debug\PikoTrafficManager.exe.config
+G:\Piko\PikoTrafficManager\PikoTrafficManager\bin\Debug\PikoTrafficManager.exe
+G:\Piko\PikoTrafficManager\PikoTrafficManager\bin\Debug\PikoTrafficManager.pdb
+G:\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\PikoTrafficManager.csprojResolveAssemblyReference.cache
+G:\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\MainWindow.g.cs
+G:\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\App.g.cs
+G:\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\PikoTrafficManager_MarkupCompile.cache
+G:\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\PikoTrafficManager_MarkupCompile.lref
+G:\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\MainWindow.baml
+G:\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\PikoTrafficManager.g.resources
+G:\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\PikoTrafficManager.Properties.Resources.resources
+G:\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\PikoTrafficManager.csproj.GenerateResource.Cache
+G:\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\PikoTrafficManager.exe
+G:\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\PikoTrafficManager.pdb
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\PikoTrafficManager.csprojResolveAssemblyReference.cache
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\Control\PlaylistMediaElement.baml
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\Control\PlaylistMediaElement.g.cs
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\MainWindow.g.cs
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\App.g.cs
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\PikoTrafficManager_MarkupCompile.cache
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\PikoTrafficManager_MarkupCompile.lref
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoTrafficManager\bin\Debug\PikoTrafficManager.exe.config
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoTrafficManager\bin\Debug\PikoTrafficManager.exe
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoTrafficManager\bin\Debug\PikoTrafficManager.pdb
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoTrafficManager\bin\Debug\Dragon.IO.Files.dll
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoTrafficManager\bin\Debug\Vlc.DotNet.Core.dll
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoTrafficManager\bin\Debug\Vlc.DotNet.Core.Interops.dll
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoTrafficManager\bin\Debug\Vlc.DotNet.Forms.dll
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoTrafficManager\bin\Debug\Vlc.DotNet.Wpf.dll
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoTrafficManager\bin\Debug\Piko.XML.pdb
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoTrafficManager\bin\Debug\Dragon.IO.Files.pdb
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\MainWindow.baml
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\PikoTrafficManager.g.resources
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\PikoTrafficManager.Properties.Resources.resources
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\PikoTrafficManager.csproj.GenerateResource.Cache
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\PikoTrafficManager.exe
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\PikoTrafficManager.pdb
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\Control\AdditionalField.g.cs
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\Control\AdditionalField.baml
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\Params.g.cs
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\Params.baml
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\Control\MediaDetection.g.cs
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\PikoTrafficManager\obj\Debug\Control\MediaDetection.baml
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\obj\Debug\PikoTrafficManager.csprojResolveAssemblyReference.cache
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\obj\Debug\Control\PlaylistMediaElement.baml
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\obj\Debug\Control\AdditionalField.g.cs
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\obj\Debug\Control\MediaDetection.g.cs
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\obj\Debug\Control\PlaylistMediaElement.g.cs
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\obj\Debug\MainWindow.g.cs
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\obj\Debug\Params.g.cs
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\obj\Debug\App.g.cs
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\obj\Debug\PikoTrafficManager_MarkupCompile.cache
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\obj\Debug\PikoTrafficManager_MarkupCompile.lref
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\bin\Debug\PikoTrafficManager.exe.config
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\bin\Debug\PikoTrafficManager.exe
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\bin\Debug\PikoTrafficManager.pdb
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\bin\Debug\Dragon.IO.Files.dll
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\bin\Debug\Vlc.DotNet.Core.dll
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\bin\Debug\Vlc.DotNet.Core.Interops.dll
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\bin\Debug\Vlc.DotNet.Forms.dll
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\bin\Debug\Vlc.DotNet.Wpf.dll
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\bin\Debug\Dragon.IO.Files.pdb
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\obj\Debug\Control\AdditionalField.baml
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\obj\Debug\Control\MediaDetection.baml
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\obj\Debug\MainWindow.baml
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\obj\Debug\Params.baml
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\obj\Debug\PikoTrafficManager.g.resources
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\obj\Debug\PikoTrafficManager.Properties.Resources.resources
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\obj\Debug\PikoTrafficManager.csproj.GenerateResource.Cache
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\obj\Debug\PikoTrafficManager.exe
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\obj\Debug\PikoTrafficManager.pdb
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\obj\Debug\Control\NewMediaDetectionItem.g.cs
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\obj\Debug\Control\NewMediaDetectionItem.baml
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\obj\Debug\App.baml
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\bin\Debug\PikoTrafficManager.exe.manifest
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\bin\Debug\PikoTrafficManager.application
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\obj\Debug\PikoTrafficManager.exe.manifest
+F:\ProjectsV3\IgnitionProject\Others\Piko\PikoTrafficManager\obj\Debug\PikoTrafficManager.application
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\bin\Debug\PikoTrafficManager.exe.config
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\bin\Debug\PikoTrafficManager.exe.manifest
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\bin\Debug\PikoTrafficManager.application
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\bin\Debug\PikoTrafficManager.exe
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\bin\Debug\PikoTrafficManager.pdb
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\bin\Debug\Dragon.IO.Files.dll
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\bin\Debug\Vlc.DotNet.Core.dll
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\bin\Debug\Vlc.DotNet.Core.Interops.dll
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\bin\Debug\Vlc.DotNet.Forms.dll
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\bin\Debug\Vlc.DotNet.Wpf.dll
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\bin\Debug\Dragon.IO.Files.pdb
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\obj\Debug\PikoTrafficManager.csprojResolveAssemblyReference.cache
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\obj\Debug\Control\PlaylistMediaElement.baml
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\obj\Debug\Control\AdditionalField.g.cs
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\obj\Debug\Control\MediaDetection.g.cs
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\obj\Debug\Control\NewMediaDetectionItem.g.cs
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\obj\Debug\Control\PlaylistMediaElement.g.cs
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\obj\Debug\MainWindow.g.cs
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\obj\Debug\Params.g.cs
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\obj\Debug\App.g.cs
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\obj\Debug\PikoTrafficManager_MarkupCompile.cache
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\obj\Debug\PikoTrafficManager_MarkupCompile.lref
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\obj\Debug\App.baml
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\obj\Debug\Control\AdditionalField.baml
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\obj\Debug\Control\MediaDetection.baml
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\obj\Debug\Control\NewMediaDetectionItem.baml
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\obj\Debug\MainWindow.baml
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\obj\Debug\Params.baml
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\obj\Debug\PikoTrafficManager.g.resources
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\obj\Debug\PikoTrafficManager.Properties.Resources.resources
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\obj\Debug\PikoTrafficManager.csproj.GenerateResource.Cache
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\obj\Debug\PikoTrafficManager.exe.manifest
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\obj\Debug\PikoTrafficManager.application
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\obj\Debug\PikoTrafficManager.exe
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\obj\Debug\PikoTrafficManager.pdb
+F:\NINSIGHT-SVN\Third Party\Piko\PikoTrafficManager\obj\Debug\PikoTrafficManager.csproj.CoreCompileInputs.cache

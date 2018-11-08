@@ -1,0 +1,412 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PikoTrafficManager"  
+        xmlns:vlcTest="assembly=Vlc.DotNet.Wpf"
+        xmlns:vlc="clr-namespace:Vlc.DotNet.Wpf;assembly=Vlc.DotNet.Wpf"
+        xmlns:Data="clr-namespace:PikoTrafficManager.Data;assembly=Piko.XML" x:Class="PikoTrafficManager.MainWindow"
+        mc:Ignorable="d"
+        Title="Piko Traffic Management" Height="1024" Width="1280" WindowState="Maximized" WindowStartupLocation="CenterScreen" Background="#FF282828" Foreground="White" Loaded="Window_Loaded">
+    <Grid x:Name="MainLayout">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="64"/>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="324" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel x:Name="RightPanel" Grid.RowSpan="3" Grid.Column="0" Background="#FF454548">
+            <Grid x:Name="VolumeLayout">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="96"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btEditConfig" Visibility="Visible" Height="32" Width="32" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,5,5,0" Click="btEditConfig_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source=".\image\Edit.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Label x:Name="lblVolumes" Foreground="White" Margin="0,32,0,0" Content="VOLUMES"/>
+                <ComboBox Foreground="Black" 
+					x:Name="cbVolumes" Grid.Row="0" Grid.Column="0" Height="24px" Width="200px" Margin="0,38,0,0" SelectionChanged="cbVolumes_SelectionChanged"/>
+
+                <DataGrid CanUserAddRows="False" x:Name="lvFilesInVolume" AutoGenerateColumns="False" Foreground="Black" Height="auto" Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Supports}" Background="#FF454548" SelectionChanged="lvFilesInVolume_SelectionChanged" SelectionMode="Single" DragEnter="lvFilesInVolume_DragEnter" MouseMove="lvFilesInVolume_MouseMove">
+                    <DataGrid.Resources>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="#FF282828" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                    </DataGrid.Resources>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Data.FileName}" Header="Filename" Width="256" SortDirection="Ascending" IsReadOnly="True" />
+                        <!--<DataGridTextColumn Header="Duration" Width="96"/>-->
+                    </DataGrid.Columns>
+
+                </DataGrid>
+                <DataGrid CanUserAddRows="False" Visibility="Hidden" x:Name="lvBlockList" AutoGenerateColumns="False" Foreground="Black" Height="auto" Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="0" ItemsSource="{Binding Blocks}" Background="#FF454548" SelectionChanged="lvFilesInVolume_SelectionChanged" MouseMove="lvBlockList_MouseMove">
+                    <DataGrid.Resources>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="#FF282828" />
+                        </Style>
+                    </DataGrid.Resources>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="200" />
+                    </DataGrid.Columns>
+
+                </DataGrid>
+            </Grid>
+        </StackPanel>
+        <TabControl x:Name="MainPanel" Grid.RowSpan="3" Grid.Column="1" Background="#FF454548" SelectionChanged="MainPanel_SelectionChanged">
+            <TabControl.Resources>
+
+                <Style TargetType="{x:Type TabPanel}">
+                    <Setter Property="Background" Value="#FF282828"/>
+                    
+                </Style>
+                <Style TargetType="{x:Type TabItem}">
+                    <Setter Property="Background" Value="#FF282828"/>
+                    <!--<Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type TabItem}">
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="Background" Value="#FF282828" />
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="False">
+                                        <Setter Property="Foreground" Value="Black"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>-->
+                </Style>
+            </TabControl.Resources>
+            <TabItem TabIndex="0" Header="File" Background="#FF454548">
+                <Grid x:Name="FileLayout">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width ="256"/>
+                        <ColumnDefinition Width ="256"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button BorderBrush="Transparent" Height="32" Width="32" Grid.Row="0" Margin="0,36,76,0" Grid.Column="1" x:Name="btDeleteSupport" VerticalAlignment="Top" HorizontalAlignment="Right" Click="btDeleteSupport_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Grid>
+                                    <Ellipse Name="Ellipse" Fill="{TemplateBinding Background}" />
+                                </Grid>
+                                <!--<Image Source=".\image\BinBlack.png"/>-->
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Height="32" Width="32" Grid.Row="0" Margin="0,36,42,0" Grid.Column="1" x:Name="btEditSupport" VerticalAlignment="Top" HorizontalAlignment="Right" Click="btEditSupport_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source=".\image\Edit.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <WrapPanel Grid.Row="0" Grid.ColumnSpan="2">
+
+                        <Label Height="32" Width="48" Content="Title" Margin="10,80,0,0" Foreground="White" />
+                        <TextBox IsEnabled="False" Height="32" Width="400" Grid.ColumnSpan="2" Margin="10,80,0,0" x:Name="tbSupportTitle" />
+                        <Label Height="32" Width="64" Margin="0,10,0,0" Content="Categorie" Foreground="White" />
+                        <ComboBox IsEnabled="False" Height="32" Width="400" Margin="4,10,0,0" x:Name="cbSupportCategory"/>
+                        <Label Height="32" Width="64" Margin="0,10,0,0" Content="Filename" Foreground="White" />
+                        <TextBox IsEnabled="False" Height="32" Width="400" Margin="4,10,0,0" x:Name="tbSupportFileName"/>
+                        <Label Height="32" Width="64" Margin="0,10,0,0" Content="Full Path" Foreground="White" />
+                        <TextBox IsEnabled="False" Height="32" Width="400" Margin="4,10,0,0" x:Name="tbSupportFullPath"/>
+
+
+                    </WrapPanel>
+                    <Button Visibility="Hidden" Grid.Row="0" Grid.Column="1" x:Name="btCancelSupportEdit" Margin="0,0,42,4" Height="32" Width="32" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="btCancelSupportEdit_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source=".\image\BlackCross.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Visibility="Hidden" Grid.Row="0" Grid.Column="1" x:Name="btSaveSupportEdit"  Margin="0,0,5,4" Height="32" Width="32" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="btSaveSupportEdit_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source=".\image\BT_save.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <TabControl x:Name="MediaPreviewInfo" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="2" Background="#FF454548">
+                        <TabControl.Resources>
+                            <Style TargetType="{x:Type TabPanel}">
+                                <Setter Property="Background" Value="#FF282828"/>
+                            </Style>
+                            <Style TargetType="{x:Type TabItem}">
+                                <Setter Property="Background" Value="#FF282828"/>
+                            </Style>
+                        </TabControl.Resources>
+                        <TabItem Header="Preview" x:Name="TBPreview" Background="#FF454548">
+                            <Grid x:Name="PlayerLayout" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition Height="48px"/>
+                                </Grid.RowDefinitions>
+                                <vlc:VlcControl Grid.Row="0" Height="auto" x:Name="vlcPreviewPlayer"/>
+                                <StackPanel Grid.Row="1" x:Name="VLCControlPanel" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button x:Name="btnSlow" Grid.Row="1" Width="48px" Content="Slow" Click="btnSlow_Click"/>
+                                    <Button x:Name="btnPause" Grid.Row="1" Width="48px" Content="Pause" Click="btnPause_Click"></Button>
+                                    <Button x:Name="btnPlay" Grid.Row="1" Width="48px" Content="Play" Click="btnPlay_Click"></Button>
+                                    <Button x:Name="btnStop" Grid.Row="1" Width="48px" Content="Stop" Click="btnStop_Click"></Button>
+                                    <Button x:Name="btnFastForward" Grid.Row="1" Width="48px" Content="Forward" Click="btnFastForward_Click"></Button>
+                                </StackPanel>
+
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Media info" x:Name="TBMediaInfo" Background="#FF454548">
+                            <Grid x:Name="MediaInfoLayout">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                
+                                <Label x:Name="mediaInfoBox" Content="" />
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                    <TabControl Grid.Row="1" Grid.ColumnSpan="4" x:Name="FilePanel" Background="#FF454548">
+                        <TabControl.Resources>
+                            <Style TargetType="{x:Type TabPanel}">
+                                <Setter Property="Background" Value="#FF282828"/>
+                            </Style>
+                            <Style TargetType="{x:Type TabItem}">
+                                <Setter Property="Background" Value="#FF282828"/>
+                            </Style>
+                        </TabControl.Resources>
+                        <TabItem Header="Custom Fields" Background="#FF454548">
+                            <Grid x:Name="CustomFieldSupportGrid">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="64"/>
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <GroupBox x:Name="dbAddField" Header="New custom field :" Grid.Row="0" Grid.ColumnSpan="3" Foreground="White">
+                                    <Grid x:Name="AddFieldLayout">
+                                        <Label Content="Field Name : " Width="128px" Height="24px" HorizontalAlignment="Left" Margin="30,0,0,0" Foreground="White" />
+                                        <TextBox x:Name="tbNewCustomFieldName" Width="256px" Height="24px" HorizontalAlignment="Left" Margin="160,0,0,0"  />
+                                        <Label Content="Field Type : " Width="128px" Height="24px" HorizontalAlignment="Left" Margin="440,0,0,0" Foreground="White" />
+                                        <ComboBox x:Name="cbFieldType" Width="256px" Height="24px" HorizontalAlignment="Left" Margin="560,0,0,0">
+                                            <ComboBoxItem Name="cbItemString">Text</ComboBoxItem>
+                                            <ComboBoxItem Name="cbItemPicture">Picture</ComboBoxItem>
+                                            <ComboBoxItem Name="cbItemVideo">Video</ComboBoxItem>
+                                        </ComboBox>
+                                        <Button Content="+" x:Name="btAddFieldName" Width="32px" Height="32px" HorizontalAlignment="Right" Margin="0,0,64,0" VerticalAlignment="Center" Click="btAddFieldName_Click" />
+
+
+                                    </Grid>
+                                </GroupBox>
+                                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden" Grid.Row="1" Grid.ColumnSpan="3">
+                                    <StackPanel   x:Name="spAdditionalFieldSupport">
+
+                                    </StackPanel>
+                                </ScrollViewer>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Segments" Background="#FF454548"/>
+                        <TabItem Header="Templates" Background="#FF454548"/>
+                    </TabControl>
+                </Grid>
+            </TabItem>
+            <TabItem TabIndex="1" Header="Block" Background="#FF454548">
+                <Grid x:Name="BlockLayout">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="64"/>
+                        <RowDefinition />
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="6"/>
+                        <ColumnDefinition Width="25*"/>
+                        <ColumnDefinition Width="146*"/>
+                        <ColumnDefinition Width="320"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btAddNewBlock" Visibility="Visible" Height="32" Width="32" Grid.Column="3" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,20,0" Click="btAddNewBlock_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source=".\image\Add.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="btDeleteCurrentBlock" Background="White" Visibility="Visible" Height="32" Width="32" Grid.Column="3" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,54,0">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source=".\image\BinWhite.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <DataGrid IsReadOnly="True" x:Name="lvAvailableBlocks" AutoGenerateColumns="False" Foreground="Black" Height="auto" Grid.ColumnSpan="1" Grid.Row="1" Grid.Column="3" ItemsSource="{Binding Blocks}" Background="#FF454548" SelectionChanged="lvAvailableBlocks_SelectionChanged">
+                        <DataGrid.Resources>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="Background" Value="#FF282828" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Style>
+                        </DataGrid.Resources>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="200" />
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+
+                    <Label x:Name="lblCurrentBlockName" Content="Title" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="10,3,0,35" Width="48" HorizontalAlignment="Left" Foreground="White"/>
+                    <TextBox IsReadOnly="True" x:Name="tbCurrentBlockName" Text="" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" Width="512" Margin="0,7,48,39" LostFocus="tbCurrentBlockName_LostFocus"/>
+
+                    <Button x:Name="btEdit" Visibility="Visible" Height="32" Width="32" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,90,0" Click="btEdit_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source=".\image\Edit.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="btExportToFile" Visibility="Visible" Height="32" Width="32" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,20,0" Click="btExportToFile_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source=".\image\BT_save_xml.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button IsEnabled="False" x:Name="btSaveBlock" Background="White" Visibility="Visible" Height="32" Width="32" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,54,0" Click="btSaveBlock_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source=".\image\BT_save.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+
+                    <StackPanel Visibility="Hidden" x:Name="spBlock" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    <DataGrid CanUserAddRows="False" AllowDrop="True" IsReadOnly="True" x:Name="dgBlockDetail" HeadersVisibility="Column"  Grid.Row="1" Grid.Column="1" ItemsSource="{Binding BlocksElements}" AutoGenerateColumns="False" Foreground="Black" Height="auto" Grid.ColumnSpan="2" Background="#FF454548" DragEnter="dgBlockDetail_DragEnter" Drop="dgBlockDetail_Drop" DragOver="dgBlockDetail_DragOver" GiveFeedback="dgBlockDetail_GiveFeedback">
+                        <DataGrid.Resources>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="Background" Value="#FF282828" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Style>
+                        </DataGrid.Resources>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Title}" Header="Title" Width="200" />
+                            <DataGridTextColumn Binding="{Binding FileName}" Header="Filename" Width="200" />
+                            <DataGridTextColumn Binding="{Binding TCInDisplay}" Header="TC In" Width="80" />
+                            <DataGridTextColumn Binding="{Binding DurationDisplay}" Header="Duration" Width="80" />
+                            <DataGridTextColumn Binding="{Binding Type}" Header="Type" Width="80" />
+                            <!--<DataGridTextColumn Binding="{Binding FrameRate}" Header="Framerate" Width="80" />
+                            <DataGridTextColumn Binding="{Binding StartMode}" Header="Mode" Width="80" />
+                            <DataGridTextColumn Binding="{Binding Type}" Header="Type" Width="80" />-->
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                </Grid>
+            </TabItem>
+            <TabItem TabIndex="2" Header="Playlist" Background="#FF454548">
+                <Grid x:Name="PlayListLayout">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="64"/>
+                        <RowDefinition />
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="6"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="320"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btAddNewPlaylist" Visibility="Visible" Height="32" Width="32" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,20,0" Click="btAddNewPlaylist_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source=".\image\Add.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="btDeleteCurrentPlaylist" Background="White" Visibility="Visible" Height="32" Width="32" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,54,0">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source=".\image\BinWhite.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <DataGrid IsReadOnly="True" x:Name="lvAvailablePlaylists" AutoGenerateColumns="False" Foreground="Black" Height="auto" Grid.ColumnSpan="1" Grid.Row="1" Grid.Column="2" ItemsSource="{Binding Playlists}" Background="#FF454548" SelectionChanged="lvAvailablePlaylists_SelectionChanged">
+                        <DataGrid.Resources>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="Background" Value="#FF282828" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Style>
+                        </DataGrid.Resources>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="200" />
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+
+                    <Label x:Name="lblCurrentPlaylistName" Content="Title" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="10,-32,0,0" Width="48" HorizontalAlignment="Left" Foreground="White"/>
+                    <TextBox IsReadOnly="True" x:Name="tbCurrentPlaylistName" Text="" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Width="512" Margin="0,-32,48,0"/>
+
+                    <Button x:Name="btEditPlaylist" Visibility="Visible" Height="32" Width="32" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,90,0" Click="btEditPlaylist_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source=".\image\Edit.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="btExportPlaylistToFile" Visibility="Visible" Height="32" Width="32" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,20,0" Click="btExportPlaylistToFile_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source=".\image\BT_save_xml.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button IsEnabled="False" x:Name="btSavePlaylist" Background="White" Visibility="Visible" Height="32" Width="32" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,54,0" Click="btSavePlaylist_Click" >
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source=".\image\BT_save.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <DataGrid CanUserAddRows="False" AllowDrop="True" IsReadOnly="True" x:Name="dgPlaylistDetail" HeadersVisibility="Column"  Grid.Row="1" Grid.Column="1" ItemsSource="{Binding PlaylistElements}" AutoGenerateColumns="False" Foreground="Black" Height="auto" Grid.ColumnSpan="1" Background="#FF454548" Margin="0,0,0,0" DragEnter="dgPlaylistDetail_DragEnter" DragOver="dgPlaylistDetail_DragOver" Drop="dgPlaylistDetail_Drop" GiveFeedback="dgPlaylistDetail_GiveFeedback">
+                        <DataGrid.Resources>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="Background" Value="#FF282828" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Style>
+                        </DataGrid.Resources>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Title}" Header="Title" Width="200" />
+                            <DataGridTextColumn Binding="{Binding FileName}" Header="Filename" Width="200" />
+                            <DataGridTextColumn Binding="{Binding TCInDisplay}" Header="TC In" Width="80" />
+                            <DataGridTextColumn Binding="{Binding DurationDisplay}" Header="Duration" Width="80" />
+                            <DataGridTextColumn Binding="{Binding Type}" Header="Type" Width="80" />
+                            <!--<DataGridTextColumn Binding="{Binding FrameRate}" Header="Framerate" Width="80" />
+                            <DataGridTextColumn Binding="{Binding StartMode}" Header="Mode" Width="80" />
+                            <DataGridTextColumn Binding="{Binding Type}" Header="Type" Width="80" />-->
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
