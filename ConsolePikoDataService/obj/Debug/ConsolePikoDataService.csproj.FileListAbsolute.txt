@@ -1,0 +1,59 @@
+G:\Piko\PikoTrafficManager\ConsolePikoDataService\obj\Debug\ConsolePikoDataService.csprojResolveAssemblyReference.cache
+G:\Piko\PikoTrafficManager\ConsolePikoDataService\bin\Debug\ConsolePikoDataService.exe.config
+G:\Piko\PikoTrafficManager\ConsolePikoDataService\bin\Debug\ConsolePikoDataService.exe
+G:\Piko\PikoTrafficManager\ConsolePikoDataService\bin\Debug\ConsolePikoDataService.pdb
+G:\Piko\PikoTrafficManager\ConsolePikoDataService\bin\Debug\PikoDataService.exe
+G:\Piko\PikoTrafficManager\ConsolePikoDataService\bin\Debug\PikoDataService.pdb
+G:\Piko\PikoTrafficManager\ConsolePikoDataService\obj\Debug\ConsolePikoDataService.exe
+G:\Piko\PikoTrafficManager\ConsolePikoDataService\obj\Debug\ConsolePikoDataService.pdb
+G:\Piko\PikoTrafficManager\ConsolePikoDataService\bin\Debug\DB\PikoServer.mdb
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\ConsolePikoDataService\bin\Debug\DB\PikoServer.mdb
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\ConsolePikoDataService\bin\Debug\ConsolePikoDataService.exe.config
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\ConsolePikoDataService\bin\Debug\ConsolePikoDataService.exe
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\ConsolePikoDataService\bin\Debug\ConsolePikoDataService.pdb
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\ConsolePikoDataService\bin\Debug\PikoDataService.exe
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\ConsolePikoDataService\bin\Debug\PikoDataService.pdb
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\ConsolePikoDataService\obj\Debug\ConsolePikoDataService.csprojResolveAssemblyReference.cache
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\ConsolePikoDataService\obj\Debug\ConsolePikoDataService.exe
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\ConsolePikoDataService\obj\Debug\ConsolePikoDataService.pdb
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\ConsolePikoDataService\bin\Debug\Piko.XML.dll
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\ConsolePikoDataService\bin\Debug\Piko.XML.pdb
+F:\ProjectsV3\IgnitionProject\Others\Piko\ConsolePikoDataService\bin\Debug\ConsolePikoDataService.exe.config
+F:\ProjectsV3\IgnitionProject\Others\Piko\ConsolePikoDataService\obj\Debug\ConsolePikoDataService.exe
+F:\ProjectsV3\IgnitionProject\Others\Piko\ConsolePikoDataService\obj\Debug\ConsolePikoDataService.pdb
+F:\ProjectsV3\IgnitionProject\Others\Piko\ConsolePikoDataService\bin\Debug\DB\PikoServer.mdb
+F:\ProjectsV3\IgnitionProject\Others\Piko\ConsolePikoDataService\bin\Debug\ConsolePikoDataService.exe
+F:\ProjectsV3\IgnitionProject\Others\Piko\ConsolePikoDataService\bin\Debug\ConsolePikoDataService.pdb
+F:\ProjectsV3\IgnitionProject\Others\Piko\ConsolePikoDataService\bin\Debug\PikoDataService.exe
+F:\ProjectsV3\IgnitionProject\Others\Piko\ConsolePikoDataService\bin\Debug\Piko.XML.dll
+F:\ProjectsV3\IgnitionProject\Others\Piko\ConsolePikoDataService\bin\Debug\PikoDataService.pdb
+F:\ProjectsV3\IgnitionProject\Others\Piko\ConsolePikoDataService\bin\Debug\Piko.XML.pdb
+F:\ProjectsV3\IgnitionProject\Others\Piko\ConsolePikoDataService\obj\Debug\ConsolePikoDataService.csprojResolveAssemblyReference.cache
+F:\NINSIGHT-SVN\Third Party\Piko\ConsolePikoDataService\bin\Debug\DB\PikoServer.mdb
+F:\NINSIGHT-SVN\Third Party\Piko\ConsolePikoDataService\bin\Debug\ConsolePikoDataService.exe.config
+F:\NINSIGHT-SVN\Third Party\Piko\ConsolePikoDataService\bin\Debug\ConsolePikoDataService.exe
+F:\NINSIGHT-SVN\Third Party\Piko\ConsolePikoDataService\bin\Debug\ConsolePikoDataService.pdb
+F:\NINSIGHT-SVN\Third Party\Piko\ConsolePikoDataService\bin\Debug\PikoDataService.exe
+F:\NINSIGHT-SVN\Third Party\Piko\ConsolePikoDataService\bin\Debug\Piko.XML.dll
+F:\NINSIGHT-SVN\Third Party\Piko\ConsolePikoDataService\bin\Debug\PikoDataService.pdb
+F:\NINSIGHT-SVN\Third Party\Piko\ConsolePikoDataService\bin\Debug\Piko.XML.pdb
+F:\NINSIGHT-SVN\Third Party\Piko\ConsolePikoDataService\obj\Debug\ConsolePikoDataService.csprojResolveAssemblyReference.cache
+F:\NINSIGHT-SVN\Third Party\Piko\ConsolePikoDataService\obj\Debug\ConsolePikoDataService.exe
+F:\NINSIGHT-SVN\Third Party\Piko\ConsolePikoDataService\obj\Debug\ConsolePikoDataService.pdb
+F:\NINSIGHT-SVN\Third Party\Piko\ConsolePikoDataService\bin\Debug\PikoDataService.exe.config
+F:\NINSIGHT-SVN\Third Party\Piko\ConsolePikoDataService\obj\Debug\ConsolePikoDataService.csproj.CoreCompileInputs.cache
+F:\NINSIGHT-SVN\Third Party\Piko\ConsolePikoDataService\bin\Debug\x86\libcrypto-1_1.dll
+F:\NINSIGHT-SVN\Third Party\Piko\ConsolePikoDataService\bin\Debug\x86\libcurl.dll
+F:\NINSIGHT-SVN\Third Party\Piko\ConsolePikoDataService\bin\Debug\x86\libssh2.dll
+F:\NINSIGHT-SVN\Third Party\Piko\ConsolePikoDataService\bin\Debug\x86\libssl-1_1.dll
+F:\NINSIGHT-SVN\Third Party\Piko\ConsolePikoDataService\bin\Debug\x86\MediaInfo.dll
+F:\NINSIGHT-SVN\Third Party\Piko\ConsolePikoDataService\bin\Debug\x64\libcrypto-1_1-x64.dll
+F:\NINSIGHT-SVN\Third Party\Piko\ConsolePikoDataService\bin\Debug\x64\libcurl.dll
+F:\NINSIGHT-SVN\Third Party\Piko\ConsolePikoDataService\bin\Debug\x64\libssh2.dll
+F:\NINSIGHT-SVN\Third Party\Piko\ConsolePikoDataService\bin\Debug\x64\libssl-1_1-x64.dll
+F:\NINSIGHT-SVN\Third Party\Piko\ConsolePikoDataService\bin\Debug\x64\MediaInfo.dll
+F:\NINSIGHT-SVN\Third Party\Piko\ConsolePikoDataService\bin\Debug\Piko.MediaInfo.dll
+F:\NINSIGHT-SVN\Third Party\Piko\ConsolePikoDataService\bin\Debug\Piko.MediaInfo.pdb
+F:\NINSIGHT-SVN\Third Party\Piko\ConsolePikoDataService\bin\Debug\MediaInfo.Wrapper.dll
+F:\NINSIGHT-SVN\Third Party\Piko\ConsolePikoDataService\bin\Debug\MediaInfo.Wrapper.pdb
+F:\NINSIGHT-SVN\Third Party\Piko\ConsolePikoDataService\bin\Debug\MediaInfo.Wrapper.xml

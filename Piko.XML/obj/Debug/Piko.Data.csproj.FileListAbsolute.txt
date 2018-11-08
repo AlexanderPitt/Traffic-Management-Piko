@@ -1,0 +1,16 @@
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\Piko.XML\bin\Debug\Piko.XML.dll
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\Piko.XML\bin\Debug\Piko.XML.pdb
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\Piko.XML\obj\Debug\Piko.XML.dll
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\Piko.XML\obj\Debug\Piko.XML.pdb
+C:\Users\maryguigui\Desktop\Piko\PikoTrafficManager\Piko.XML\obj\Debug\Piko.Data.csprojResolveAssemblyReference.cache
+F:\ProjectsV3\IgnitionProject\Others\Piko\Piko.XML\obj\Debug\Piko.XML.dll
+F:\ProjectsV3\IgnitionProject\Others\Piko\Piko.XML\bin\Debug\Piko.XML.dll
+F:\ProjectsV3\IgnitionProject\Others\Piko\Piko.XML\bin\Debug\Piko.XML.pdb
+F:\ProjectsV3\IgnitionProject\Others\Piko\Piko.XML\obj\Debug\Piko.XML.pdb
+F:\ProjectsV3\IgnitionProject\Others\Piko\Piko.XML\obj\Debug\Piko.Data.csprojResolveAssemblyReference.cache
+F:\NINSIGHT-SVN\Third Party\Piko\Piko.XML\bin\Debug\Piko.XML.dll
+F:\NINSIGHT-SVN\Third Party\Piko\Piko.XML\bin\Debug\Piko.XML.pdb
+F:\NINSIGHT-SVN\Third Party\Piko\Piko.XML\obj\Debug\Piko.Data.csprojResolveAssemblyReference.cache
+F:\NINSIGHT-SVN\Third Party\Piko\Piko.XML\obj\Debug\Piko.XML.dll
+F:\NINSIGHT-SVN\Third Party\Piko\Piko.XML\obj\Debug\Piko.XML.pdb
+F:\NINSIGHT-SVN\Third Party\Piko\Piko.XML\obj\Debug\Piko.Data.csproj.CoreCompileInputs.cache

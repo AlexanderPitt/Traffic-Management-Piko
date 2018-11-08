@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Vlc.DotNet.Core.Interops</id>
+    <version>2.1.134</version>
+    <title>Vlc.DotNet.Core.Interops</title>
+    <authors>ZeBobo5</authors>
+    <owners>ZeBobo5</owners>
+    <projectUrl>https://github.com/ZeBobo5/Vlc.DotNet</projectUrl>
+    <iconUrl>http://images1.videolan.org/images/largeVLC.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Wrapper to use the audio/video capabilities of the VLC libraries.</description>
+    <summary>Wrapper to use the audio/video capabilities of the VLC libraries.</summary>
+    <tags>vlc media wrapper interop interops</tags>
+  </metadata>
+</package>
